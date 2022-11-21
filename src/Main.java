@@ -27,8 +27,24 @@ public class Main {
         }
     }
 
+    // Задание 3
+
+    public static int calculateDeliveryDays (int deliveryDistance) {
+        int deliveryDays = 1;
+        int interval = 40;
+        int startInterval = 20;
+        if (deliveryDistance > startInterval) {
+            deliveryDays = deliveryDays + (int) Math.ceil((deliveryDistance - startInterval) / (double) interval);
+        }
+        return deliveryDays;
+    }
+
     public static void main(String[] args) {
         isLeap(2023);
         suggestInstall(0,2022);
+
+        int deliveryDistance = 50;
+        int deliveryDays = calculateDeliveryDays(deliveryDistance);
+        System.out.println("Потребуется дней: " + deliveryDays);
     }
 }
